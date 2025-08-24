@@ -24,5 +24,6 @@ def get_locale():
         language = None
     if language is None:
         language = request.accept_languages.best_match(supported_languages)
+        session['language'] = language
     print("Selected Language", language)
     return language
