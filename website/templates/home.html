@@ -1,5 +1,10 @@
 {% extends 'base.html' %} {% block body %}
+
 <div align="center">
-<h1>{{ _("Hello, user") }}</h1>
+  {% if user.is_authenticated %}
+  <h1>{{ _("Hello,") + user.username }}</h1>
+  {% else %}
+  <h1>{{ _("Hello, user") }}</h1>
+  {% endif %}
 </div>
 {% endblock %}
